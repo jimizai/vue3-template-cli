@@ -1,10 +1,9 @@
-<template>
-  <div class="home">
-    <i class="ft">&#xe663;</i>
-    <br />
-    {{ state.counter }}
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+<template lang="pug">
+.home
+  i.ft &#xe663;
+  br
+  span {{state.counter}}
+  HelloWorld
 </template>
 
 <script lang="ts">
