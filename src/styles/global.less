@@ -1,0 +1,93 @@
+/* margin */
+.m-auto {
+  margin: auto
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.ma(50);
+
+.ma(@n, @i: 1) when (@i =< @n) {
+  @num: @i*2;
+
+  .m-@{num} {
+    margin: (@i * 2px);
+  }
+
+  .ml-@{num} {
+    margin-left: (@i * 2px);
+  }
+
+  .mr-@{num} {
+    margin-right: (@i * 2px);
+  }
+
+  .mt-@{num} {
+    margin-top: (@i * 2px);
+  }
+
+  .mb-@{num} {
+    margin-bottom: (@i * 2px);
+  }
+
+  .mx-@{num} {
+    margin-left: (@i * 2px);
+    margin-right: (@i * 2px);
+  }
+
+  .my-@{num} {
+    margin-top: (@i * 2px);
+    margin-bottom: (@i * 2px);
+  }
+
+  .ma(@n, (@i + 1));
+}
+
+/* padding */
+.p-auto {
+  padding: auto
+}
+
+.pl-auto {
+  padding-left: auto;
+}
+
+.pa(50);
+
+.pa(@n, @i: 1) when (@i =< @n) {
+  @num: @i*2;
+
+  .p-@{num} {
+    padding: (@i * 2px);
+  }
+
+  .pl-@{num} {
+    padding-left: (@i * 2px);
+  }
+
+  .pr-@{num} {
+    padding-right: (@i * 2px);
+  }
+
+  .pt-@{num} {
+    padding-top: (@i * 2px);
+  }
+
+  .pb-@{num} {
+    padding-bottom: (@i * 2px);
+  }
+
+  .px-@{num} {
+    padding-left: (@i * 2px);
+    padding-right: (@i * 2px);
+  }
+
+  .py-@{num} {
+    padding-top: (@i * 2px);
+    padding-bottom: (@i * 2px);
+  }
+
+  .pa(@n, (@i + 1));
+}
