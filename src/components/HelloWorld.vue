@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ count }}</h1>
-    <button @click="ADD_COUNT">
+    <h1>{{ states.count }}</h1>
+    <button @click="mutations[ADD_COUNT]()">
       测试
     </button>
   </div>
@@ -12,9 +12,10 @@ import { useState, useMutations } from '@/hooks';
 import { ADD_COUNT } from '@/store/global/constants';
 export default {
   setup() {
-    const { count } = useState('global', ['count']);
-    useMutations('global', [ADD_COUNT]);
-    return { count, ADD_COUNT };
+    const states = useState('global', ['count']);
+    const mutations = useMutations('global', [ADD_COUNT]);
+
+    return { states, mutations, ADD_COUNT };
   }
 };
 </script>

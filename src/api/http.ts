@@ -1,7 +1,15 @@
 import axios from 'axios';
-import { message } from 'ant-design-vue';
 import queryString from 'query-string';
 import { BASE_URL } from '@/config';
+
+const message = {
+  error(msg: string) {
+    console.log(msg);
+  },
+  success(msg: string) {
+    console.log(msg);
+  }
+};
 
 interface FetchConfig {
   url: string;
@@ -58,6 +66,7 @@ export function fetch(config: FetchConfig): Promise<any> {
           localStorage.clear();
         }
         if (res.data.errno !== 0) {
+          // eslint-disable-next-line
           throw res.data.result?.message || '网络异常';
         }
         resolve(res.data.result?.items ?? res.data.result ?? res.data);
